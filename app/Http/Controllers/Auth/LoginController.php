@@ -42,24 +42,21 @@ class LoginController extends Controller
      */
     public function login(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $this->validate($request, [
             'phone' => ['required'],
             'password' => ['required'],
         ]);
-        if ($validator->fails()) {
-            return $this->response->array(['errors' => $validator->errors()], 422);
+        $user = User::where('phone_number', $request->phone)->first();
+        if ($user && Hash::check($request->input('password'), $user->password)) {
+            Auth::login($user);
+            $token_name = Str::random(8);
+            $token = $request->user()->createToken($token_name)->accessToken;
+            return $this->response->array(['token' => $token], 200);
         } else {
-            $user = User::where('phone_number',$request->phone)->first();
-            if ($user && Hash::check($request->input('password'),$user->password)) {
-                Auth::login($user);
-                $token_name = Str::random(8);
-                $token = $request->user()->createToken($token_name)->accessToken;
-                return $this->response->array(['token' => $token], 200);
-            }else{
-                $this->response->error('Wrong email and password', 401);
-            }
+            $this->response->error('Wrong email and password', 401);
         }
     }
+
     public function logout(Request $request)
     {
         $user = $request->user();
