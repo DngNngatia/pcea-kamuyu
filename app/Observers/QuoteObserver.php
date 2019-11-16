@@ -5,6 +5,7 @@ namespace App\Observers;
 use App\Data\Models\Quote;
 use App\User;
 use ExponentPhpSDK\Expo;
+use mysql_xdevapi\Exception;
 
 class QuoteObserver
 {
@@ -18,10 +19,17 @@ class QuoteObserver
     {
         $users = User::get();
         foreach ($users as $user) {
-            $expo = Expo::normalSetup();
-            $expo->subscribe($user->name, $user->device_token);
-            $notification = ['body' => $quote->quote, 'sound' => 'default',];
-            $expo->notify($quote->user->name . 'posted a new quote', $notification);
+            try{
+                $expo = Expo::normalSetup();
+                $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default',];
+                $expo->notify($user->id, $notification);
+            }catch (Exception $e){
+                $expo = Expo::normalSetup();
+                $expo->subscribe($user->id, $user->device_token);
+                $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default',];
+                $expo->notify($user->id, $notification);
+            }
+
         }
     }
 
@@ -35,10 +43,16 @@ class QuoteObserver
     {
         $users = User::get();
         foreach ($users as $user) {
-            $expo = Expo::normalSetup();
-            $expo->subscribe($user->name, $user->device_token);
-            $notification = ['body' => $quote->quote, 'sound' => 'default',];
-            $expo->notify($quote->user->name . 'updated a quote', $notification);
+            try{
+                $expo = Expo::normalSetup();
+                $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default',];
+                $expo->notify($user->id, $notification);
+            }catch (Exception $e){
+                $expo = Expo::normalSetup();
+                $expo->subscribe($user->id, $user->device_token);
+                $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default',];
+                $expo->notify($user->id, $notification);
+            }
         }
     }
 

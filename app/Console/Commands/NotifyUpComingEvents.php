@@ -46,7 +46,6 @@ class NotifyUpComingEvents extends Command
             $users = User::where('church_id', $event->church_id)->get();
             foreach ($users as $user){
                 $expo = Expo::normalSetup();
-                $expo->subscribe($user->name, $user->device_token);
                 $notification = ['body' => $event->message, 'sound' => 'default',];
                 $expo->notify($event->title, $notification);
             }

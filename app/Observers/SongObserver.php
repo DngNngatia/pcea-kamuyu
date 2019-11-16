@@ -19,7 +19,6 @@ class SongObserver
         $users = User::get();
         foreach ($users as $user) {
             $expo = Expo::normalSetup();
-            $expo->subscribe($user->name, $user->device_token);
             $notification = ['body' => $song->uploaded_by->name . ' uploaded a new song: ' . $song->title . ' by ' . $song->name, 'sound' => 'default',];
             $expo->notify($user->name . 'updated a quote', $notification);
         }
