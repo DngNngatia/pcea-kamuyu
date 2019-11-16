@@ -11,6 +11,6 @@ class Quote extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'id', 'uploaded_by');
+        return $this->belongsTo(User::class, 'uploaded_by', 'id');
     }
 }
