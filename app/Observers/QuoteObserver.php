@@ -19,7 +19,7 @@ class QuoteObserver
     public function created(Quote $quote)
     {
         $users = User::get();
-        foreach ($users as $user) {
+        collect($users)->map(function ($user) use ($quote){
             try{
                 $expo = Expo::normalSetup();
                 $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default'];
@@ -32,8 +32,8 @@ class QuoteObserver
             } catch (ExpoException $e) {
                 dd($e);
             }
+        });
 
-        }
     }
 
     /**
