@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\Data\Models\Quote;
 use App\User;
+use ExponentPhpSDK\Exceptions\ExpoException;
 use ExponentPhpSDK\Expo;
 use mysql_xdevapi\Exception;
 
@@ -23,13 +24,13 @@ class QuoteObserver
                 $expo = Expo::normalSetup();
                 $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default'];
                 $expo->notify($user->id, $notification);
-                dd($quote);
             }catch (Exception $e){
                 $expo = Expo::normalSetup();
                 $expo->subscribe($user->id, $user->device_token);
                 $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default'];
                 $expo->notify($user->id, $notification);
-                dd($quote);
+            } catch (ExpoException $e) {
+                dd($e);
             }
 
         }
