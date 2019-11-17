@@ -23,7 +23,7 @@ class QuoteObserver
             try{
                 $expo = Expo::normalSetup();
                 $notification = ['body' => 'hey'];
-//                $expo->notify($user->id, $notification);
+                $expo->notify($user->id, (array)$notification);
             }catch (ExpoException $e){
 //                $expo = Expo::normalSetup();
 //                $expo->subscribe($user->id, $user->device_token);
