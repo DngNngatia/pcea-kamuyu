@@ -18,17 +18,17 @@ class QuoteObserver
      */
     public function created(Quote $quote)
     {
-        $users = User::all();
+        $users = User::get();
         foreach ($users as $user) {
             try{
                 $expo = Expo::normalSetup();
-                $notification = ['body' => 'hey'];
-                $expo->notify((string)$user->id, $notification,true);
+                $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default'];
+                $expo->notify((string)$user->id, $notification);
             }catch (ExpoException $e){
-//                $expo = Expo::normalSetup();
-//                $expo->subscribe($user->id, $user->device_token);
-//                $notification = ['body' => 'hey'];
-//                $expo->notify($user->id, $notification);
+                $expo = Expo::normalSetup();
+                $expo->subscribe($user->id, $user->device_token);
+                $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default'];
+                $expo->notify((string)$user->id, $notification);
             }
 
         }
@@ -47,12 +47,12 @@ class QuoteObserver
             try{
                 $expo = Expo::normalSetup();
                 $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default'];
-                $expo->notify($user->id, $notification);
+                $expo->notify((string)$user->id, $notification);
             }catch (Exception $e){
                 $expo = Expo::normalSetup();
                 $expo->subscribe($user->id, $user->device_token);
                 $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default',];
-                $expo->notify($user->id, $notification);
+                $expo->notify((string)$user->id, $notification);
             }
         }
     }
