@@ -21,14 +21,14 @@ class QuoteObserver
         $users = User::all();
         foreach ($users as $user) {
             try{
-                $expo = Expo::normalSetup();
-                $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default'];
-                $expo->notify($user->id, $notification);
+//                $expo = Expo::normalSetup();
+//                $notification = ['body' => 'hey'];
+//                $expo->notify($user->id, $notification);
             }catch (ExpoException $e){
-                $expo = Expo::normalSetup();
-                $expo->subscribe($user->id, $user->device_token);
-                $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default'];
-                $expo->notify($user->id, $notification);
+//                $expo = Expo::normalSetup();
+//                $expo->subscribe($user->id, $user->device_token);
+//                $notification = ['body' => 'hey'];
+//                $expo->notify($user->id, $notification);
             }
 
         }
