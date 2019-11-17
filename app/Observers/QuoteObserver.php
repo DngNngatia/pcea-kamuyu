@@ -22,8 +22,8 @@ class QuoteObserver
         foreach ($users as $user) {
             try{
                 $expo = Expo::normalSetup();
-                $notification = ['body' => 'hey'];
-                $expo->notify($user->id, $notification);
+//                $notification = ['body' => 'hey'];
+//                $expo->notify($user->id, $notification);
             }catch (ExpoException $e){
 //                $expo = Expo::normalSetup();
 //                $expo->subscribe($user->id, $user->device_token);
