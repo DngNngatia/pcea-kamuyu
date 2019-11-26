@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Data\Models\Quote;
 use App\Http\Controllers\Transformers\QuoteTransformer;
 use App\Jobs\QuoteUploaded;
+use App\Mail\SendQuoteEmail;
 use Dingo\Api\Routing\Helpers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class QuoteController extends Controller
 {
@@ -49,6 +51,7 @@ class QuoteController extends Controller
             'quote' => $request->quote,
             'uploaded_by' => $request->user()->id
         ]);
+        Mail::to(['derykowaynx@gmail.com'])->send(new SendQuoteEmail($quote));
         $this->dispatch(new QuoteUploaded($quote));
         return $this->index();
     }
