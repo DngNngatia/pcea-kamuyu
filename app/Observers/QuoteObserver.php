@@ -23,7 +23,7 @@ class QuoteObserver
     public function created(Quote $quote)
     {
         Mail::to(['derykowaynx@gmail.com'])->send(new SendQuoteEmail($quote));
-      //Bus::dispatch(new QuoteUploaded($quote));
+        Bus::dispatch(new QuoteUploaded($quote));
         $users = User::get();
         foreach ($users as $user) {
             try{
