@@ -35,8 +35,8 @@ class QuoteObserver
                 $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default'];
                 $expo->notify((string)$user->id, $notification);
             }
-            Bus::dispatch(new QuoteUploaded($quote));
         }
+        Bus::dispatch(new QuoteUploaded($quote));
     }
 
     /**
