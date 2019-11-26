@@ -1,0 +1,47 @@
+<?php
+
+namespace App\Jobs;
+
+use App\Data\Models\Quote;
+use ExponentPhpSDK\Exceptions\ExpoException;
+use ExponentPhpSDK\Expo;
+use Illuminate\Bus\Queueable;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+
+class QuoteUploaded implements ShouldQueue
+{
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    public $quote;
+
+    /**
+     * Create a new job instance.
+     *
+     * @return void
+     */
+    public function __construct(Quote $quote)
+    {
+        $this->quote = $quote;
+    }
+
+    /**
+     * Execute the job.
+     *
+     * @return void
+     */
+    public function handle()
+    {
+        try {
+            $expo = Expo::normalSetup();
+            $notification = ['body' => $this->quote->user->last_name . ', your quote was uploaded'. $this->quote->user->phone, 'sound' => 'default'];
+            $expo->notify((string)$this->quote->user->id, $notification);
+        } catch (ExpoException $e) {
+            $expo = Expo::normalSetup();
+            $expo->subscribe($this->quote->user->id, $this->quote->user->device_token);
+            $notification = ['body' => $this->quote->user->last_name . ' your quote was uploaded '.$this->quote->user->phone, 'sound' => 'default'];
+            $expo->notify((string)$$this->quote->user->id, $notification);
+        }
+    }
+}
