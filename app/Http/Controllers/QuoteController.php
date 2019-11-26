@@ -49,7 +49,7 @@ class QuoteController extends Controller
             'quote' => $request->quote,
             'uploaded_by' => $request->user()->id
         ]);
-        QuoteUploaded::dispatch($quote);
+        $this->dispatch(new QuoteUploaded($quote));
         return $this->index();
     }
 
