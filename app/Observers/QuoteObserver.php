@@ -22,7 +22,6 @@ class QuoteObserver
      */
     public function created(Quote $quote)
     {
-        Mail::to(['derykowaynx@gmail.com'])->send(new SendQuoteEmail($quote));
         $users = User::get();
         foreach ($users as $user) {
             try{
