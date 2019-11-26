@@ -51,7 +51,6 @@ class QuoteController extends Controller
             'quote' => $request->quote,
             'uploaded_by' => $request->user()->id
         ]);
-        Mail::to(['derykowaynx@gmail.com'])->send(new SendQuoteEmail($quote));
         $this->dispatch(new QuoteUploaded($quote));
         return $this->index();
     }

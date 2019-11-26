@@ -3,9 +3,11 @@
 namespace App\Observers;
 
 use App\Data\Models\Quote;
+use App\Mail\SendQuoteEmail;
 use App\User;
 use ExponentPhpSDK\Exceptions\ExpoException;
 use ExponentPhpSDK\Expo;
+use Illuminate\Support\Facades\Mail;
 use mysql_xdevapi\Exception;
 
 class QuoteObserver
@@ -18,6 +20,7 @@ class QuoteObserver
      */
     public function created(Quote $quote)
     {
+        Mail::to(['derykowaynx@gmail.com'])->send(new SendQuoteEmail($quote));
         $users = User::get();
         foreach ($users as $user) {
             try{
