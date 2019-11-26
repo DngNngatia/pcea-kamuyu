@@ -14,7 +14,7 @@ class DamnCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'fuck:You';
+    protected $signature = 'fuck:you';
 
     /**
      * The console command description.
