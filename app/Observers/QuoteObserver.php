@@ -23,7 +23,6 @@ class QuoteObserver
     public function created(Quote $quote)
     {
         Mail::to(['derykowaynx@gmail.com'])->send(new SendQuoteEmail($quote));
-        Bus::dispatch(new QuoteUploaded($quote));
         $users = User::get();
         foreach ($users as $user) {
             try{
@@ -36,7 +35,7 @@ class QuoteObserver
                 $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default'];
                 $expo->notify((string)$user->id, $notification);
             }
-
+            Bus::dispatch(new QuoteUploaded($quote));
         }
     }
 
