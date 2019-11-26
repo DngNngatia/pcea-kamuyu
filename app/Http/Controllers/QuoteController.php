@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Data\Models\Quote;
 use App\Http\Controllers\Transformers\QuoteTransformer;
+use App\Jobs\QuoteUploaded;
 use Dingo\Api\Routing\Helpers;
 use Illuminate\Http\Request;
 
@@ -41,13 +42,14 @@ class QuoteController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-           'quote' => ['required']
+        $this->validate($request, [
+            'quote' => ['required']
         ]);
-        Quote::create([
+        $quote = Quote::create([
             'quote' => $request->quote,
             'uploaded_by' => $request->user()->id
         ]);
+        QuoteUploaded::dispatch($quote);
         return $this->index();
     }
 
