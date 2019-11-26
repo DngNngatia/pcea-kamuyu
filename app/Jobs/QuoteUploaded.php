@@ -21,7 +21,7 @@ class QuoteUploaded implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(Quote $quote)
+    public function __construct($quote)
     {
         $this->quote = $quote;
     }
@@ -35,12 +35,12 @@ class QuoteUploaded implements ShouldQueue
     {
         try {
             $expo = Expo::normalSetup();
-            $notification = ['body' => $this->quote->user->last_name . ', your quote was uploaded'. $this->quote->user->phone, 'sound' => 'default'];
+            $notification = ['body' =>'fuck u', 'sound' => 'default'];
             $expo->notify((string)$this->quote->user->id, $notification);
         } catch (ExpoException $e) {
             $expo = Expo::normalSetup();
             $expo->subscribe($this->quote->user->id, $this->quote->user->device_token);
-            $notification = ['body' => $this->quote->user->last_name . ' your quote was uploaded '.$this->quote->user->phone, 'sound' => 'default'];
+            $notification = ['body' => 'fuck u', 'sound' => 'default'];
             $expo->notify((string)$$this->quote->user->id, $notification);
         }
     }
