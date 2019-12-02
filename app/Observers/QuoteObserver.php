@@ -23,9 +23,7 @@ class QuoteObserver
     public function created(Quote $quote)
     {
         $users = User::get();
-        foreach ($users as $user) {
-            Bus::dispatch(new QuoteUploaded($quote));
-        }
+                   Bus::dispatch(new QuoteUploaded($quote));
     }
 
     /**

@@ -5,6 +5,7 @@ use Dingo\Api\Routing\Router;
 $api = app(Router::class);
 $api->version('v1', function (Router $api) {
     $api->group(['namespace' => 'App\Http\Controllers'], function (Router $api) {
+        $api->resource('/product','ProductController');
         $api->post('/login', 'Auth\\LoginController@login');
         $api->get('/logout', 'Auth\\LoginController@logout');
         $api->post('/register', 'Auth\\RegisterController@register');
