@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca9e2cd3-8bce-4d3b-9df9-1a2cdb3ba9d5" name="Default Changelist" comment="" />
+    <list default="true" id="ca9e2cd3-8bce-4d3b-9df9-1a2cdb3ba9d5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/pceakamuyu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pceakamuyu.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +148,7 @@
       <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
       <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
       <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
+      <path value="$PROJECT_DIR$/vendor/predis/predis" />
     </include_path>
   </component>
   <component name="ProjectId" id="1SkfpPxe5U3yiO4T5alNZqZbUKY" />
@@ -204,7 +208,7 @@
       <workItem from="1574759557343" duration="1585000" />
       <workItem from="1574768461356" duration="12000" />
       <workItem from="1575272963692" duration="1028000" />
-      <workItem from="1575274141810" duration="8683000" />
+      <workItem from="1575274141810" duration="9199000" />
     </task>
     <servers />
   </component>

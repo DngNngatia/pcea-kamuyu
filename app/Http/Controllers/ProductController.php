@@ -11,8 +11,9 @@ class ProductController extends Controller
 {
     public function index(){
         $timestamp = Carbon::now()->getTimestamp();
-        return (new ProductsReport())->store('/reports/export_master' . $timestamp . '.xlsx')->chain([
+        (new ProductsReport())->store('/reports/export_master' . $timestamp . '.xlsx')->chain([
             new EmailProductReport(storage_path().'/app/reports/export_master' . $timestamp . '.xlsx')
         ]);
+        return redirect()->back();
     }
 }
