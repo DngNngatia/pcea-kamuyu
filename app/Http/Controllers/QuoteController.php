@@ -21,7 +21,7 @@ class QuoteController extends Controller
      */
     public function index()
     {
-        $quotes = Quote::paginate(50);
+        $quotes = Quote::orderByDesc('created_at')->paginate(50);
         return $this->response->paginator($quotes, new QuoteTransformer());
 
     }

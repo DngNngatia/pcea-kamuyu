@@ -20,7 +20,7 @@ class EventController extends Controller
      */
     public function index(Request $request)
     {
-        $events = Event::where('church_id',$request->user()->id)->paginate(20);
+        $events = Event::where('church_id', $request->user()->id)->whereDate('start_time', '>', Carbon::now()->toDateTime())->orderByDesc('created_at')->paginate(20);
         return $this->response->paginator($events, new EventTransformer());
 
     }

@@ -51,7 +51,7 @@ class LoginController extends Controller
             Auth::login($user);
             $token_name = Str::random(8);
             $token = $request->user()->createToken($token_name)->accessToken;
-            return $this->response->array(['token' => $token], 200);
+            return $this->response->array(['token' => $token, 'user' => $request->user()], 200);
         } else {
             $this->response->error('Wrong email and password', 401);
         }
