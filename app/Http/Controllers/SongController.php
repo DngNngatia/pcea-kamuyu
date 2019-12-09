@@ -7,6 +7,7 @@ use App\Data\Models\Song;
 use App\Http\Controllers\Transformers\SongTransformer;
 use Dingo\Api\Routing\Helpers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 
 class SongController extends Controller
@@ -47,16 +48,14 @@ class SongController extends Controller
             'title' => ['required', 'unique:songs'],
             'singer' => ['required'],
         ]);
-        $music_file = $request->file('file_path');
-        if (isset($music_file)) {
-            $filename = $music_file->getClientOriginalName();
-            $location = storage_path('app/audio/');
-            $music_file->move($location, $filename);
+        if ($request->hasFile('file_path')) {
+            $path = $request->file('file_path')->store('audios');
+            dd($path);
             $song = Song::create([
                 'title' => $request->title,
                 'singer' => $request->singer,
                 'uploaded_by' => $request->user()->id,
-                'file_path' => URL::asset('public/audio/'.$filename)
+                'file_path' => URL::asset($path)
             ]);
             if ($request->exists('song_lyric')) {
                 Lyric::create([
