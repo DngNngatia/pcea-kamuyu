@@ -50,7 +50,8 @@ class SongController extends Controller
         if (isset($music_file)) {
             $filename = $music_file->getClientOriginalName();
             $location = storage_path('app/audio/');
-            $music_file->move($location, $filename);
+            $path = $music_file->move($location, $filename);
+            dd($path);
             $song = Song::create([
                 'title' => $request->title,
                 'singer' => $request->singer,
