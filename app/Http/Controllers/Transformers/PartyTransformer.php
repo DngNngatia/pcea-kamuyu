@@ -9,7 +9,7 @@ use League\Fractal\TransformerAbstract;
 
 class PartyTransformer extends TransformerAbstract
 {
-    public $availableIncludes = ['contribution'];
+    public $availableIncludes = ['contribution', 'user'];
 
     public function transform(Party $party)
     {
@@ -26,5 +26,11 @@ class PartyTransformer extends TransformerAbstract
     {
         return $this->item($party->contribution, new ContributionTransformer());
     }
+
+    public function includeUser(Party $party)
+    {
+        return $this->item($party->uploaded_by, new WorshipperTransformer());
+    }
+
 
 }

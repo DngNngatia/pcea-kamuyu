@@ -14,9 +14,9 @@ class Project extends Model
         return $this->belongsTo(User::class, 'id', 'uploaded_by');
     }
 
-    public function contributions()
+    public function contribution()
     {
-        return $this->hasMany(Contribution::class, 'project_id', 'id');
+        return $this->hasOne(Contribution::class, 'project_id', 'id');
     }
 
     public function church()

@@ -9,7 +9,7 @@ use League\Fractal\TransformerAbstract;
 
 class SongTransformer extends TransformerAbstract
 {
-    public $availableIncludes = ['lyric', 'uploaded_by'];
+    public $availableIncludes = ['lyric', 'user'];
 
     public function transform(Song $song)
     {
@@ -26,7 +26,7 @@ class SongTransformer extends TransformerAbstract
         return $song->lyric ? $this->item($song->lyric, new LyricTransformer()) : null;
     }
 
-    public function includeUploadedBy(Song $song)
+    public function includeUser(Song $song)
     {
         return $song->uploaded_by ? $this->item($song->uploaded_by, new WorshipperTransformer()) : null;
     }

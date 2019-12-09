@@ -16,6 +16,6 @@ class Event extends Model
 
     public function contribution()
     {
-        return $this->belongsTo(User::class, 'id', 'contribution_id');
+        return $this->hasOne(User::class, 'id', 'contribution_id');
     }
 }

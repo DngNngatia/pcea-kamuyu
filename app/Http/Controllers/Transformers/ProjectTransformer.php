@@ -9,7 +9,7 @@ use League\Fractal\TransformerAbstract;
 
 class ProjectTransformer extends TransformerAbstract
 {
-    public $availableIncludes = ['user', 'church'];
+    public $availableIncludes = ['user', 'contribution'];
 
     public function transform(Project $project)
     {
@@ -28,9 +28,9 @@ class ProjectTransformer extends TransformerAbstract
         return $this->item($project->uploaded_by, new WorshipperTransformer());
     }
 
-    public function includeChurch(Project $project)
+    public function includeContribution(Project $project)
     {
-        return $this->item($project->church, new ChurchTransformer());
+        return $this->item($project->contribution, new ContributionTransformer());
     }
 
 }
