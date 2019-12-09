@@ -7,6 +7,7 @@ use App\Data\Models\Song;
 use App\Http\Controllers\Transformers\SongTransformer;
 use Dingo\Api\Routing\Helpers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 
 class SongController extends Controller
 {
@@ -51,7 +52,7 @@ class SongController extends Controller
             $filename = $music_file->getClientOriginalName();
             $location = storage_path('app/audio/');
             $path = $music_file->move($location, $filename);
-            dd($path);
+            dd(URL::to(public_path().'/audio/'.$filename));
             $song = Song::create([
                 'title' => $request->title,
                 'singer' => $request->singer,
