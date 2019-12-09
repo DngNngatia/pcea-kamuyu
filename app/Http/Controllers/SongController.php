@@ -52,12 +52,11 @@ class SongController extends Controller
             $filename = $music_file->getClientOriginalName();
             $location = storage_path('app/audio/');
             $music_file->move($location, $filename);
-            dd(URL::asset('public/audio/'.$filename));
             $song = Song::create([
                 'title' => $request->title,
                 'singer' => $request->singer,
                 'uploaded_by' => $request->user()->id,
-                'file_path' => $filename
+                'file_path' => URL::asset('public/audio/'.$filename)
             ]);
             if ($request->exists('song_lyric')) {
                 Lyric::create([
