@@ -46,7 +46,6 @@ class SongController extends Controller
             'title' => ['required', 'unique:songs'],
             'singer' => ['required'],
         ]);
-        dd($request->all());
         $music_file = $request->file('file_path');
         if (isset($music_file)) {
             $filename = $music_file->getClientOriginalName();
