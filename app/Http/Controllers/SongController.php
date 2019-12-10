@@ -47,6 +47,7 @@ class SongController extends Controller
         $this->validate($request, [
             'title' => ['required', 'unique:songs'],
             'singer' => ['required'],
+            'file_path' => 'required|mimes:application/octet-stream,audio/mpeg,mpga,mp3,wav',
         ]);
         if ($request->hasFile('file_path')) {
             $path = $request->file('file_path')->store('audios');
