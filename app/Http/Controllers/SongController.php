@@ -50,12 +50,11 @@ class SongController extends Controller
         ]);
         if ($request->hasFile('file_path')) {
             $path = $request->file('file_path')->store('audios');
-            dd(URL::asset(storage_path().'/app/public/'.$path));
             $song = Song::create([
                 'title' => $request->title,
                 'singer' => $request->singer,
                 'uploaded_by' => $request->user()->id,
-                'file_path' => URL::asset(storage_path().'/app/public/'.$path)
+                'file_path' => $path
             ]);
             if ($request->exists('song_lyric')) {
                 Lyric::create([
