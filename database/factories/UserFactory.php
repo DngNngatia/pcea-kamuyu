@@ -2,8 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Product;
-use App\User;
+use App\Data\Models\Quote;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -18,12 +17,8 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(Product::class, function (Faker $faker) {
+$factory->define(Quote::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'description' => $faker->jobTitle,
-        'type' => $faker->company,
-        'price' => $faker->numberBetween(0,100),
-        'quantity' => $faker->numberBetween(1,50)
+        'quote' => $faker->paragraph
     ];
 });

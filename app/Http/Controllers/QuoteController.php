@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Data\Models\Quote;
+use App\Http\Controllers\Reports\ProductsReport;
 use App\Http\Controllers\Transformers\QuoteTransformer;
-use App\Jobs\QuoteUploaded;
-use App\Mail\SendQuoteEmail;
+use App\Jobs\EmailProductReport;
 use Dingo\Api\Routing\Helpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -24,6 +24,12 @@ class QuoteController extends Controller
         $quotes = Quote::orderByDesc('created_at')->paginate(50);
         return $this->response->paginator($quotes, new QuoteTransformer());
 
+    }
+
+    public function download(){
+        (new ProductsReport())->store('quotes.xlsx')->chain([
+           new EmailProductReport(storage_path().'/app/quotes.xlsx')
+        ]);
     }
 
     /**

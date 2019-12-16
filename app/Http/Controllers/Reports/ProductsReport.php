@@ -4,6 +4,7 @@
 namespace App\Http\Controllers\Reports;
 
 
+use App\Data\Models\Quote;
 use App\Product;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Database\Query\Builder;
@@ -21,7 +22,7 @@ class ProductsReport implements FromQuery, WithHeadings, WithMapping,ShouldQueue
      */
     public function query()
     {
-        return Product::query();
+        return Quote::query();
     }
 
     /**
@@ -29,7 +30,7 @@ class ProductsReport implements FromQuery, WithHeadings, WithMapping,ShouldQueue
      */
     public function headings(): array
     {
-        return ["#ID", "NAME", "DESCRIPTION", "TYPE", "PRICE", "QUANTITY", "CREATED_AT"];
+        return ["#ID", "QUOTE", "CREATED_AT"];
     }
 
     /**
@@ -41,11 +42,7 @@ class ProductsReport implements FromQuery, WithHeadings, WithMapping,ShouldQueue
     {
         return [
             $row->id,
-            $row->name,
-            $row->description,
-            $row->type,
-            $row->price,
-            $row->quantity,
+            $row->quote,
             $row->created_at
         ];
     }
