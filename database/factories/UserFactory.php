@@ -19,7 +19,7 @@ use Illuminate\Support\Str;
 
 $factory->define(Quote::class, function (Faker $faker) {
     return [
-        'quote' => $faker->paragraph,
+        'quote' => $faker->title,
         'uploaded_by' => 1
     ];
 });
