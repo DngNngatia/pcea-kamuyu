@@ -53,13 +53,13 @@ class SongController extends Controller
             $t = Carbon::now()->getTimestamp();
             $music_file = $request->file('file_path');
             $filename = $music_file->getClientOriginalExtension();
-            $location = storage_path('audio/' .$t.'.'.$music_file->getExtension());
+            $location = storage_path('audio/' .$t.'.'.$filename);
             $music_file->move($location, $filename);
             $song = Song::create([
                 'title' => $request->title,
                 'singer' => $request->singer,
                 'uploaded_by' => $request->user()->id,
-                'file_path' => $t.'.'.$music_file->getExtension()
+                'file_path' => $t.'.'.$filename
             ]);
             if ($request->exists('song_lyric')) {
                 Lyric::create([
