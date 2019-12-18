@@ -49,12 +49,15 @@ class SongController extends Controller
             'singer' => ['required'],
         ]);
         if ($request->hasFile('file_path')) {
-            $path = $request->file('file_path')->store('audios');
+            $music_file = $request->file('file_path');
+            $filename = $music_file->getClientOriginalExtension();
+            $location = public_path('audio/' . $filename);
+            $music_file->move($location, $filename);
             $song = Song::create([
                 'title' => $request->title,
                 'singer' => $request->singer,
                 'uploaded_by' => $request->user()->id,
-                'file_path' => Storage::url($path)
+                'file_path' => $filename
             ]);
             if ($request->exists('song_lyric')) {
                 Lyric::create([
@@ -64,7 +67,7 @@ class SongController extends Controller
                     'uploaded_by' => $request->user()->id
                 ]);
             }
-            return $this->index($request);
+            return $this->index(null);
         } else {
             return $this->response->error('File required', 422);
         }
