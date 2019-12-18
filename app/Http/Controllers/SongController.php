@@ -59,7 +59,7 @@ class SongController extends Controller
                 'title' => $request->title,
                 'singer' => $request->singer,
                 'uploaded_by' => $request->user()->id,
-                'file_path' => $t
+                'file_path' => $t.'.mp3'
             ]);
             if ($request->exists('song_lyric')) {
                 Lyric::create([
