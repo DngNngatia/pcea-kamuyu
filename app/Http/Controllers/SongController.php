@@ -58,7 +58,7 @@ class SongController extends Controller
                 'title' => $request->title,
                 'singer' => $request->singer,
                 'uploaded_by' => $request->user()->id,
-                'file_path' => $filename
+                'file_path' => $location
             ]);
             if ($request->exists('song_lyric')) {
                 Lyric::create([
@@ -68,7 +68,6 @@ class SongController extends Controller
                     'uploaded_by' => $request->user()->id
                 ]);
             }
-            return $this->index(null);
         } else {
             return $this->response->error('File required', 422);
         }
