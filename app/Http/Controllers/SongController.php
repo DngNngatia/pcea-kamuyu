@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Data\Models\Lyric;
 use App\Data\Models\Song;
 use App\Http\Controllers\Transformers\SongTransformer;
+use Carbon\Carbon;
 use Dingo\Api\Routing\Helpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -51,7 +52,7 @@ class SongController extends Controller
         if ($request->hasFile('file_path')) {
             $music_file = $request->file('file_path');
             $filename = $music_file->getClientOriginalExtension();
-            $location = public_path('audio/' . $filename);
+            $location = public_path('audio/' .Carbon::now()->getTimestamp().'.mp3');
             $music_file->move($location, $filename);
             $song = Song::create([
                 'title' => $request->title,
