@@ -52,7 +52,7 @@ class SongController extends Controller
         if ($request->hasFile('file_path')) {
             $music_file = $request->file('file_path');
             $filename = $music_file->getClientOriginalExtension();
-            $location = public_path('audio/' .Carbon::now()->getTimestamp().'.mp3');
+            $location = storage_path('audio/' .Carbon::now()->getTimestamp().'.mp3');
             $music_file->move($location, $filename);
             $song = Song::create([
                 'title' => $request->title,
