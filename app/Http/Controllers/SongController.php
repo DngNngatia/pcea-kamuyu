@@ -57,14 +57,14 @@ class SongController extends Controller
                 'uploaded_by' => $request->user()->id,
                 'file_path' => $path
             ]);
-            if ($request->exists('song_lyric')) {
-                Lyric::create([
-                    'song_id' => $song->id,
-                    'title' => $request->title,
-                    'song_lyric' => $request->song_lyric,
-                    'uploaded_by' => $request->user()->id
-                ]);
-            }
+//            if ($request->exists('song_lyric')) {
+//                Lyric::create([
+//                    'song_id' => $song->id,
+//                    'title' => $request->title,
+//                    'song_lyric' => $request->song_lyric,
+//                    'uploaded_by' => $request->user()->id
+//                ]);
+//            }
         } else {
             return $this->response->error('File required', 422);
         }
