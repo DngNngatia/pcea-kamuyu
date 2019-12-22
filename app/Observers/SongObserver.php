@@ -5,6 +5,7 @@ namespace App\Observers;
 use App\Data\Models\Song;
 use App\User;
 use ExponentPhpSDK\Expo;
+use mysql_xdevapi\Exception;
 
 class SongObserver
 {
@@ -18,9 +19,16 @@ class SongObserver
     {
         $users = User::get();
         foreach ($users as $user) {
-            $expo = Expo::normalSetup();
-            $notification = ['body' => $song->uploaded_by->name . ' uploaded a new song: ' . $song->title . ' by ' . $song->name, 'sound' => 'default',];
-            $expo->notify($user->name . 'updated a quote', $notification);
+            try{
+                $expo = Expo::normalSetup();
+                $notification = ['body' => $song->uploaded_by->first_name.' uploaded a new song', 'sound' => 'default'];
+                $expo->notify((string)$user->id, $notification);
+            }catch (Exception $e){
+                $expo = Expo::normalSetup();
+                $expo->subscribe($user->id, $user->device_token);
+                $notification = ['body' => $song->uploaded_by->first_name.' uploaded a new song', 'sound' => 'default',];
+                $expo->notify((string)$user->id, $notification);
+            }
         }
     }
 
