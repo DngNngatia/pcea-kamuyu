@@ -65,6 +65,7 @@ class SongController extends Controller
                     'uploaded_by' => $request->user()->id
                 ]);
             }
+            return  $this->index($request);
         } else {
             return $this->response->error('File required', 422);
         }
