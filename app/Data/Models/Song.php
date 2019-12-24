@@ -11,12 +11,12 @@ class Song extends Model
 
     public function lyric()
     {
-        return $this->belongsTo(Lyric::class, 'id', 'lyric_id');
+        return $this->belongsTo(Lyric::class, 'lyric_id', 'id');
     }
 
     public function uploaded_by()
     {
-        return $this->belongsTo(User::class, 'id', 'uploaded_by');
+        return $this->belongsTo(User::class, 'uploaded_by','id');
     }
 
     public function scopeFilterBy($q,$filters){
