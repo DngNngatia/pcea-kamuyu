@@ -50,12 +50,16 @@ class SongController extends Controller
             'singer' => ['required'],
         ]);
         if ($request->hasFile('file_path')) {
-            $path = $request->file('file_path')->store('audio');
+            $fn = Carbon::now()->getTimestamp();
+            $music_file = $request->file('file_path');
+            $filename = $music_file->getClientOriginalExtension();
+            $location = public_path('audio/');
+            $music_file->move($location, $fn.'.'.$filename);
             $song = Song::create([
                 'title' => $request->title,
                 'singer' => $request->singer,
                 'uploaded_by' => $request->user()->id,
-                'file_path' => Storage::url($path)
+                'file_path' => 'audio/'.$fn.'.'.$filename
             ]);
             if ($request->exists('song_lyric')) {
                 Lyric::create([
@@ -65,7 +69,7 @@ class SongController extends Controller
                     'uploaded_by' => $request->user()->id
                 ]);
             }
-            return  $this->index($request);
+            return $this->index($request);
         } else {
             return $this->response->error('File required', 422);
         }
