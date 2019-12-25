@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca9e2cd3-8bce-4d3b-9df9-1a2cdb3ba9d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Observers/QuoteObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/QuoteObserver.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -231,7 +231,7 @@
       <workItem from="1577185059581" duration="1304000" />
       <workItem from="1577187014231" duration="12000" />
       <workItem from="1577191505021" duration="264000" />
-      <workItem from="1577216782388" duration="2451000" />
+      <workItem from="1577216782388" duration="2715000" />
     </task>
     <servers />
   </component>

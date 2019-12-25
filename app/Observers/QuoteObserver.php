@@ -25,7 +25,8 @@ class QuoteObserver
         $users = User::get();
         foreach ($users as $user) {
                 $expo = Expo::normalSetup();
-                $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default'];
+                $expo->subscribe($user->id, $user->device_token);
+                $notification = ['body' => $quote->user->first_name.' uploaded a new quote', 'sound' => 'default',];
                 $expo->notify((string)$user->id, $notification);
         }
     }
