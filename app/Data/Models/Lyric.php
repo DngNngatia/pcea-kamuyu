@@ -11,10 +11,11 @@ class Lyric extends Model
 
     public function song()
     {
-        return $this->belongsTo(Song::class, 'id', 'song_id');
+        return $this->belongsTo(Song::class, 'song_id', 'id');
     }
-    public function uploaded_by()
+
+    public function user()
     {
-        return $this->belongsTo(User::class, 'id', 'uploaded_by');
+        return $this->belongsTo(User::class, 'uploaded_by', 'id');
     }
 }

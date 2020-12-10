@@ -9,7 +9,7 @@ class Notification extends Model
 {
     protected $fillable = ['title', 'message', 'send_at', 'created_by'];
 
-    public function uploaded_by()
+    public function user()
     {
         return $this->belongsTo(User::class, 'id', 'created_by');
     }
