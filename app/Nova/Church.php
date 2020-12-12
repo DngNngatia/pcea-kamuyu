@@ -49,12 +49,14 @@ class Church extends Resource
             Text::make('Location')
                 ->sortable()
                 ->rules('required', 'max:255'),
-            Text::make('Latitude')
+            Text::make('Latitude','lat')
                 ->sortable()
-                ->rules('required', 'max:255')->hideFromIndex(),
-            Text::make('Longitude')
+                ->rules('required', 'max:255')
+                ->hideFromIndex(),
+            Text::make('Longitude','long')
                 ->sortable()
-                ->rules('required', 'max:255')->hideFromIndex(),
+                ->rules('required', 'max:255')
+                ->hideFromIndex(),
             HasMany::make('Events'),
             HasMany::make('Projects'),
             HasMany::make('Users'),

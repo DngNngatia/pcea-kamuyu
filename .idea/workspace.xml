@@ -3,32 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ca9e2cd3-8bce-4d3b-9df9-1a2cdb3ba9d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Data/Models/Church.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Data/Models/Church.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Data/Models/Contribution.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Data/Models/Contribution.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Data/Models/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Data/Models/Event.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Data/Models/Lyric.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Data/Models/Lyric.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Data/Models/Notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Data/Models/Notification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Data/Models/Party.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Data/Models/Party.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Data/Models/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Data/Models/Project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Data/Models/Quote.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Data/Models/Quote.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Data/Models/Song.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Data/Models/Song.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Church.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Church.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Contribution.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Contribution.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Event.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Lyric.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Lyric.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Notification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Party.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Party.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Quote.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Quote.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Song.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Song.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Observers/QuoteObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/QuoteObserver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nova/resources/views/auth/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/nova/resources/views/auth/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nova/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/nova/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nova/resources/views/partials/logo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/nova/resources/views/partials/logo.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/nova/partials/logo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/nova/partials/logo.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,7 +257,7 @@
       <workItem from="1606652851992" duration="38000" />
       <workItem from="1607592651122" duration="3201000" />
       <workItem from="1607601007171" duration="2468000" />
-      <workItem from="1607780037305" duration="8450000" />
+      <workItem from="1607780037305" duration="9326000" />
     </task>
     <servers />
   </component>
