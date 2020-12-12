@@ -2,8 +2,12 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Party extends Resource
@@ -41,6 +45,25 @@ class Party extends Resource
     {
         return [
             ID::make()->sortable(),
+            Text::make('Title')
+                ->sortable()
+                ->rules('required', 'max:255'),
+            Textarea::make('Message')
+                ->sortable()
+                ->rules('required', 'max:255'),
+            DateTime::make('Start Time')
+                ->sortable()
+                ->rules('required', 'max:255'),
+            Text::make('Venue')
+                ->sortable()
+                ->rules('required', 'max:255'),
+            BelongsTo::make('Church', 'church', 'App\Nova\Church')
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
+            BelongsTo::make('Created By', 'user', 'App\Nova\User')
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
+            BelongsTo::make('Contribution', 'contribution', 'App\Nova\Contribution')
         ];
     }
 

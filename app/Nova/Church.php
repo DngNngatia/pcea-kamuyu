@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
@@ -21,7 +22,7 @@ class Church extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -29,7 +30,7 @@ class Church extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'name'
     ];
 
     /**
@@ -54,6 +55,10 @@ class Church extends Resource
             Text::make('Longitude')
                 ->sortable()
                 ->rules('required', 'max:255')->hideFromIndex(),
+            HasMany::make('Events'),
+            HasMany::make('Projects'),
+            HasMany::make('Users'),
+            HasMany::make('Parties'),
         ];
     }
 

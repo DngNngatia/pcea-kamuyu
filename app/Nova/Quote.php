@@ -6,6 +6,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Quote extends Resource
@@ -31,6 +32,7 @@ class Quote extends Resource
      */
     public static $search = [
         'id',
+        'quote'
     ];
 
     /**
@@ -43,10 +45,12 @@ class Quote extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Quote')
+            Textarea::make('Quote')
                 ->sortable()
                 ->rules('required', 'max:255'),
-            BelongsTo::make('Uploaded By', 'user', 'App\Nova\User'),
+            BelongsTo::make('Uploaded By', 'user', 'App\Nova\User')
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
         ];
     }
 

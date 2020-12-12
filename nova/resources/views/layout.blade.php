@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=1280">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Sabbie Parks</title>
+    <title>KAMUYU PCEA</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,800,800i,900,900i" rel="stylesheet">
@@ -38,7 +38,7 @@
             <div class="content">
                 <div class="flex items-center relative shadow h-header bg-white z-50 px-6">
                     <a href="{{ Config::get('nova.url') }}" class="no-underline dim font-bold text-90 mr-6">
-                        Sabbie Parks
+                        KAMUYU PCEA
                     </a>
 
                     @if (count(Nova::globallySearchableResources(request())) > 0)
@@ -56,7 +56,7 @@
                     <p class="mt-8 text-center text-xs text-80">
                         <a href="http://nova.laravel.com" class="text-primary dim no-underline">Park the smart way</a>
                         <span class="px-1">&middot;</span>
-                        &copy; {{ date('Y') }} Sabbie parks hedstech.
+                        &copy; {{ date('Y') }} KAMUYU PCEA.
                         <span class="px-1">&middot;</span>
                         v{{ Laravel\Nova\Nova::version() }}
                     </p>

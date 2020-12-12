@@ -23,7 +23,7 @@ class Song extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -32,6 +32,7 @@ class Song extends Resource
      */
     public static $search = [
         'id',
+        'title'
     ];
 
     /**
@@ -50,9 +51,12 @@ class Song extends Resource
             Text::make('Singer')
                 ->sortable()
                 ->rules('required', 'max:255'),
+            Text::make('File Path')
+                ->sortable()
+                ->rules('required', 'max:255'),
             BelongsTo::make('Uploaded By', 'user', 'App\Nova\User')
                 ->hideWhenCreating()
-                ->hideWhenCreating(),
+                ->hideWhenUpdating(),
             HasOne::make('Lyric', 'lyric', 'App\Nova\Lyric')
         ];
     }

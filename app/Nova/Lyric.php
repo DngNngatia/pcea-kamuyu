@@ -6,6 +6,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Lyric extends Resource
@@ -31,6 +32,7 @@ class Lyric extends Resource
      */
     public static $search = [
         'id',
+        'title'
     ];
 
     /**
@@ -46,11 +48,13 @@ class Lyric extends Resource
             Text::make('Title')
                 ->sortable()
                 ->rules('required', 'max:255'),
-            Text::make('Lyric')
+            Textarea::make('Song Lyric')
                 ->sortable()
-                ->rules('required', 'max:255'),
+                ->rules('required'),
             BelongsTo::make('Song', 'song', 'App\Nova\Song'),
-            BelongsTo::make('Uploaded By', 'user', 'App\Nova\User'),
+            BelongsTo::make('Uploaded By', 'user', 'App\Nova\User')
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
         ];
     }
 
