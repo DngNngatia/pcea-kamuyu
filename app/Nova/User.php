@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
@@ -53,13 +54,15 @@ class User extends Resource
             Text::make('Last Name')
                 ->sortable()
                 ->rules('required', 'max:255'),
-
+            Text::make('Phone Number')
+                ->sortable()
+                ->rules('required', 'max:255'),
             Text::make('Email')
                 ->sortable()
                 ->rules('required', 'email', 'max:254')
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}'),
-
+            Boolean::make('Member Only'),
             Password::make('Password')
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:6')
