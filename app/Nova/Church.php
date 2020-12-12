@@ -53,7 +53,7 @@ class Church extends Resource
                 ->sortable()
                 ->rules('required', 'max:255')
                 ->hideFromIndex(),
-            Text::make('Longitude','lon')
+            Text::make('Longitude','lng')
                 ->sortable()
                 ->rules('required', 'max:255')
                 ->hideFromIndex(),
