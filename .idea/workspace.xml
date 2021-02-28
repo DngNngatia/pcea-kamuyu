@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca9e2cd3-8bce-4d3b-9df9-1a2cdb3ba9d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/pceakamuyu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pceakamuyu.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Nova/Lyric.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Lyric.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +170,7 @@
       <path value="$PROJECT_DIR$/vendor/inspheric/nova-url-field" />
       <path value="$PROJECT_DIR$/vendor/phpseclib/bcmath_compat" />
       <path value="$PROJECT_DIR$/vendor/gregoriohc/laravel-nova-theme-responsive" />
+      <path value="$PROJECT_DIR$/vendor/waynestate/nova-ckeditor4-field" />
     </include_path>
   </component>
   <component name="ProjectId" id="1SkfpPxe5U3yiO4T5alNZqZbUKY" />
@@ -263,7 +264,7 @@
       <workItem from="1607780037305" duration="12933000" />
       <workItem from="1607881298211" duration="13000" />
       <workItem from="1608786368828" duration="600000" />
-      <workItem from="1614507284148" duration="847000" />
+      <workItem from="1614507284148" duration="3822000" />
     </task>
     <servers />
   </component>

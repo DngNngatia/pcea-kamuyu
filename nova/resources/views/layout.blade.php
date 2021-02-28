@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>KAMUYU PCEA</title>
-
+    <link rel="icon" href="http://pceamuteero.com/wp-content/uploads/2018/09/testimonial_22-190x190.jpg">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,800,800i,900,900i" rel="stylesheet">
 

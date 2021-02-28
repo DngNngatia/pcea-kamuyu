@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Waynestate\Nova\CKEditor;
 
 class Lyric extends Resource
 {
@@ -49,7 +48,6 @@ class Lyric extends Resource
             Text::make('Title')
                 ->sortable()
                 ->rules('required', 'max:255'),
-            CKEditor::make('Song Lyric','song_lyric'),
             BelongsTo::make('Song', 'song', 'App\Nova\Song'),
             BelongsTo::make('Uploaded By', 'user', 'App\Nova\User')
                 ->hideWhenCreating()
