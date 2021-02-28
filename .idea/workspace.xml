@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ca9e2cd3-8bce-4d3b-9df9-1a2cdb3ba9d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Lyric.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Lyric.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +152,6 @@
       <path value="$PROJECT_DIR$/vendor/psr/http-client" />
       <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
       <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
@@ -171,6 +171,10 @@
       <path value="$PROJECT_DIR$/vendor/phpseclib/bcmath_compat" />
       <path value="$PROJECT_DIR$/vendor/gregoriohc/laravel-nova-theme-responsive" />
       <path value="$PROJECT_DIR$/vendor/waynestate/nova-ckeditor4-field" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/derrick/ck-editor" />
     </include_path>
   </component>
   <component name="ProjectId" id="1SkfpPxe5U3yiO4T5alNZqZbUKY" />
@@ -264,7 +268,7 @@
       <workItem from="1607780037305" duration="12933000" />
       <workItem from="1607881298211" duration="13000" />
       <workItem from="1608786368828" duration="600000" />
-      <workItem from="1614507284148" duration="3822000" />
+      <workItem from="1614507284148" duration="5105000" />
     </task>
     <servers />
   </component>
@@ -289,10 +293,6 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="726" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1607789804792" />
-    <state x="727" y="468" width="523" height="168" key="ComposerInitDialogKey" timestamp="1601150758194">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state x="727" y="468" width="523" height="168" key="ComposerInitDialogKey/67.27.1853.1053@67.27.1853.1053" timestamp="1601150758194" />
     <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1608805928000">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -301,5 +301,9 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="656" y="257" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1607789492651" />
+    <state x="718" y="384" width="540" height="336" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1614538906788">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="718" y="384" width="540" height="336" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1614538906788" />
   </component>
 </project>

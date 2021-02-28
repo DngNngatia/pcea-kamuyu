@@ -26,10 +26,10 @@ class User extends Authenticatable
         parent::boot();
 
         // auto-sets values on creation
-        static::creating(function (User $user) {
-            $user->church_id = Auth::user()->church_id;
-            $user->device_token = 'Invalid';
-        });
+//        static::creating(function (User $user) {
+//            $user->church_id = Auth::user()->church_id;
+//            $user->device_token = 'Invalid';
+//        });
     }
 
     /**

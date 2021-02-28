@@ -19,7 +19,8 @@
         "laravel/tinker": "^1.0",
         "maatwebsite/excel": "^3.1",
         "predis/predis": "^1.1",
-        "waynestate/nova-ckeditor4-field": "^0.7.0"
+        "waynestate/nova-ckeditor4-field": "^0.7.0",
+        "derrick/ck-editor": "*"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
@@ -56,6 +57,10 @@
         {
             "type": "path",
             "url": "./nova"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/CkEditor"
         }
     ],
     "minimum-stability": "dev",
