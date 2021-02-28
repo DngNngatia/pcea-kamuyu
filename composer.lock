@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "97d362380dc48a3f36efdd366605b436",
+    "content-hash": "c4dc22cdb4bc92ef58998503319cbcea",
     "packages": [
         {
             "name": "alymosul/exponent-server-sdk-php",
@@ -5920,16 +5920,64 @@
             "time": "2020-07-14T17:54:18+00:00"
         },
         {
+            "name": "waynestate/nova-ckeditor4-field",
+            "version": "0.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/waynestate/nova-ckeditor4-field.git",
+                "reference": "c2af7e01cb9e68e1684497d2d1eb6ba5d50804f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/waynestate/nova-ckeditor4-field/zipball/c2af7e01cb9e68e1684497d2d1eb6ba5d50804f8",
+                "reference": "c2af7e01cb9e68e1684497d2d1eb6ba5d50804f8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Waynestate\\Nova\\CKEditorFieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Waynestate\\Nova\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Web Communications",
+                    "email": "web@wayne.edu"
+                }
+            ],
+            "description": "This nova package allows you to use CKEditor 4 for text areas.",
+            "keywords": [
+                "CKEditor",
+                "laravel",
+                "nova"
+            ],
+            "time": "2020-03-06T03:54:49+00:00"
+        },
+        {
             "name": "webmozart/assert",
             "version": "1.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": ""
             },
@@ -6378,6 +6426,7 @@
                 "faker",
                 "fixtures"
             ],
+            "abandoned": true,
             "time": "2019-12-12T13:22:17+00:00"
         },
         {
