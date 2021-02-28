@@ -48,6 +48,7 @@ class Lyric extends Resource
             Text::make('Title')
                 ->sortable()
                 ->rules('required', 'max:255'),
+            Textarea::make('Song Lyric'),
             BelongsTo::make('Song', 'song', 'App\Nova\Song'),
             BelongsTo::make('Uploaded By', 'user', 'App\Nova\User')
                 ->hideWhenCreating()
