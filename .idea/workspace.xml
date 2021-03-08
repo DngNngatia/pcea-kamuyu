@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ca9e2cd3-8bce-4d3b-9df9-1a2cdb3ba9d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,12 +267,25 @@
       <workItem from="1607881298211" duration="13000" />
       <workItem from="1608786368828" duration="600000" />
       <workItem from="1614507284148" duration="5105000" />
-      <workItem from="1614542538371" duration="1121000" />
+      <workItem from="1614542538371" duration="1840000" />
+      <workItem from="1614609622276" duration="8000" />
+      <workItem from="1615012038485" duration="35000" />
+      <workItem from="1615017629539" duration="1302000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -295,10 +309,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="167" y="125" width="1653" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1614543734460" />
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1608805928000">
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1615184814304">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1608805928000" />
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1615184814304" />
     <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1614542804236">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

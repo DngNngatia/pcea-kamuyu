@@ -45,15 +45,25 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-        $this->validate($request,[
+        $validator = Validator::make($request->all(), [
             'device_token' => ['required', 'string'],
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'phone_number' => ['required', 'string', 'max:11', 'unique:users'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
             'church_id' => ['required']
         ]);
+        if ($validator->fails()) {
+            $errors = collect($validator->errors())->reduce(function ($i, $f) {
+                if ($i == '') {
+                    return $i . $f;
+                } else {
+                    return $i . ',' . $f;
+                }
+            }, '');
+            return response()->json(['message' => 'Error registering user', 'errors' => $errors], 422);
+        }
         User::create([
             'device_token' => $request['device_token'],
             'first_name' => $request['first_name'],
