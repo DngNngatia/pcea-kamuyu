@@ -81,11 +81,11 @@ class RegisterController extends Controller
     public function smsCode(Request $request)
     {
         $this->validate($request, [
-            'phone' => ['required','exists:users'],
+            'phone_number' => ['required','exists:users'],
         ]);
         try {
             $code = random_int(1000, 9000);
-            dispatch_now(new SendSMS($request->phone, "Hi, Kindly use code: $code to complete your registration."));
+            dispatch_now(new SendSMS($request->phone_number, "Hi, Kindly use code: $code to complete your registration."));
             return response()->json([
                 'code' => $code,
                 'message' => 'success',
