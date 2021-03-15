@@ -1,5 +1,5 @@
 <template>
-    <span v-html="field"/>
+    <span v-html="field.value"/>
 </template>
 
 <script>
