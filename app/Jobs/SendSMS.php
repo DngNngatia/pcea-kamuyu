@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use AfricasTalking\SDK\AfricasTalking;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
