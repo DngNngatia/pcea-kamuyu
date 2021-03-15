@@ -91,7 +91,7 @@ class RegisterController extends Controller
                 'message' => 'success',
             ], 200);
         } catch (Exception $e) {
-            return $this->response->error($e->getMessage());
+            return response()->json(['error' => $e->getMessage()],422);
         }
 
     }
