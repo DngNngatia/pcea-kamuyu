@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\SendSMS;
 use App\User;
 use Dingo\Api\Routing\Helpers;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -74,5 +75,18 @@ class RegisterController extends Controller
             'password' => Hash::make($request['password']),
         ]);
         return $this->response->created();
+    }
+
+    public function smsCode(Request $request)
+    {
+        $this->validate($request, [
+            'phone' => ['required']
+        ]);
+        $code = random_int(1000, 9000);
+        dispatch(new SendSMS($request->phone_number, "Hi, Kindly use code $code to complete your registration."));
+        return response()->json([
+            'code' => $code,
+            'message' => 'success',
+        ], 200);
     }
 }

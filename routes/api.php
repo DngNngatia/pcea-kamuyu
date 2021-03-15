@@ -9,6 +9,7 @@ $api->version('v1', function (Router $api) {
         $api->post('/login', 'Auth\\LoginController@login');
         $api->get('/logout', 'Auth\\LoginController@logout');
         $api->post('/register', 'Auth\\RegisterController@register');
+        $api->post('/sms-code','Auth\\RegisterController@smsCode');
         $api->resource('/church', 'ChurchController');
         $api->group(['middleware' => ['auth:api']], function (Router $api) {
             $api->resource('/song', 'SongController');
