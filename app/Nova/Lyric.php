@@ -50,7 +50,7 @@ class Lyric extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 //            Textarea::make('Song Lyric'),
-            CkEditor::make('Song Lyric')->hideFromIndex(),
+            CkEditor::make('Song Lyric')->hideFromIndex()->rules('required'),
             BelongsTo::make('Song', 'song', 'App\Nova\Song'),
             BelongsTo::make('Uploaded By', 'user', 'App\Nova\User')
                 ->hideWhenCreating()
