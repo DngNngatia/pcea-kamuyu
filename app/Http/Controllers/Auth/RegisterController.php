@@ -81,7 +81,7 @@ class RegisterController extends Controller
     public function smsCode(Request $request)
     {
         $this->validate($request, [
-            'phone_number' => ['required','exists:users'],
+            'phone_number' => ['required','unique:users'],
         ]);
         try {
             $code = random_int(1000, 9000);
