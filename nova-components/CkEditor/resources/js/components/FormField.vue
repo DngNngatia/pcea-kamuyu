@@ -1,13 +1,7 @@
 <template>
     <default-field :field="field">
         <template slot="field">
-            <input :id="field.name" type="text"
-                class="w-full form-control form-input form-input-bordered"
-                :class="errorClasses"
-                :placeholder="field.name"
-                v-model="value"
-            />
-
+            <ckeditor :class="errorClasses" v-model="value" :config="editorConfig"></ckeditor>
             <p v-if="hasError" class="my-2 text-danger">
                 {{ firstError }}
             </p>
@@ -16,34 +10,40 @@
 </template>
 
 <script>
-import { FormField, HandlesValidationErrors } from 'laravel-nova'
+    import {FormField, HandlesValidationErrors} from 'laravel-nova'
 
-export default {
-    mixins: [FormField, HandlesValidationErrors],
+    export default {
+        mixins: [FormField, HandlesValidationErrors],
 
-    props: ['resourceName', 'resourceId', 'field'],
-
-    methods: {
-        /*
-         * Set the initial, internal value for the field.
-         */
-        setInitialValue() {
-          this.value = this.field.value || ''
+        props: ['resourceName', 'resourceId', 'field'],
+        data() {
+            return {
+                editorConfig: {
+                    // The configuration of the editor.
+                }
+            }
         },
+        methods: {
+            /*
+             * Set the initial, internal value for the field.
+             */
+            setInitialValue() {
+                this.value = this.field.value || ''
+            },
 
-        /**
-         * Fill the given FormData object with the field's internal value.
-         */
-        fill(formData) {
-          formData.append(this.field.attribute, this.value || '')
-        },
+            /**
+             * Fill the given FormData object with the field's internal value.
+             */
+            fill(formData) {
+                formData.append(this.field.attribute, this.value || '')
+            },
 
-        /**
-         * Update the field's internal value.
-         */
-        handleChange(value) {
-          this.value = value
+            /**
+             * Update the field's internal value.
+             */
+            handleChange(value) {
+                this.value = value
+            }
         }
     }
-}
 </script>

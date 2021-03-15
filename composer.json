@@ -9,7 +9,9 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "africastalking/africastalking": "^3.0",
         "alymosul/laravel-exponent-push-notifications": "^1.7",
+        "derrick/ck-editor": "*",
         "dingo/api": "^2.4.0",
         "fideloper/proxy": "^4.0",
         "gregoriohc/laravel-nova-theme-responsive": "^0.8.1",
@@ -19,8 +21,7 @@
         "laravel/tinker": "^1.0",
         "maatwebsite/excel": "^3.1",
         "predis/predis": "^1.1",
-        "waynestate/nova-ckeditor4-field": "^0.7.0",
-        "derrick/ck-editor": "*"
+        "waynestate/nova-ckeditor4-field": "^0.7.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

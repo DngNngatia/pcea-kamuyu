@@ -16,7 +16,7 @@ class CreateChurchesTable extends Migration
         Schema::create('churches', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('location');
+            $table->string('location')->nullable();
             $table->float('lat')->nullable();
             $table->float('lng')->nullable();
             $table->timestamps();

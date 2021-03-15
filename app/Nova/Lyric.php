@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Derrick\CkEditor\CkEditor;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
@@ -48,7 +49,8 @@ class Lyric extends Resource
             Text::make('Title')
                 ->sortable()
                 ->rules('required', 'max:255'),
-            Textarea::make('Song Lyric'),
+//            Textarea::make('Song Lyric'),
+            CkEditor::make('Song Lyric')->hideFromIndex(),
             BelongsTo::make('Song', 'song', 'App\Nova\Song'),
             BelongsTo::make('Uploaded By', 'user', 'App\Nova\User')
                 ->hideWhenCreating()
