@@ -58,8 +58,7 @@ class RegisterController extends Controller
             'church_id' => ['required']
         ]);
         if ($validator->fails()) {
-            Log::info($validator->errors());
-            $errors = collect($validator->errors())->reduce(function ($i, $f) {
+            $errors = collect($validator->errors()->all())->reduce(function ($i, $f) {
                 if ($i == '') {
                     return $i . $f;
                 } else {
