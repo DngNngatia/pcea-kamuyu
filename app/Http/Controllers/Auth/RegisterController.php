@@ -10,6 +10,7 @@ use Exception;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -57,6 +58,7 @@ class RegisterController extends Controller
             'church_id' => ['required']
         ]);
         if ($validator->fails()) {
+            Log::info($validator->errors());
             $errors = collect($validator->errors())->reduce(function ($i, $f) {
                 if ($i == '') {
                     return $i . $f;
