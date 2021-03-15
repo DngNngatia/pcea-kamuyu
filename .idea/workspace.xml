@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ca9e2cd3-8bce-4d3b-9df9-1a2cdb3ba9d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,7 +274,7 @@
       <workItem from="1615017629539" duration="1302000" />
       <workItem from="1615184811954" duration="1874000" />
       <workItem from="1615794403404" duration="2768000" />
-      <workItem from="1615800054834" duration="4388000" />
+      <workItem from="1615800054834" duration="5452000" />
     </task>
     <servers />
   </component>
@@ -320,10 +321,14 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1615184814304" />
-    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1615804173971">
+    <state x="657" y="253" key="run.anything.popup" timestamp="1615804649188">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1615804173971" />
+    <state x="657" y="253" key="run.anything.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1615804649188" />
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1615804654912">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1615804654912" />
     <state x="718" y="384" width="540" height="336" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1614538906788">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

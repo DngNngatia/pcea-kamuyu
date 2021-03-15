@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\SendSMS;
 use App\User;
 use Dingo\Api\Routing\Helpers;
+use Exception;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -82,11 +83,16 @@ class RegisterController extends Controller
         $this->validate($request, [
             'phone' => ['required']
         ]);
-        $code = random_int(1000, 9000);
-        dispatch(new SendSMS($request->phone_number, "Hi, Kindly use code $code to complete your registration."));
-        return response()->json([
-            'code' => $code,
-            'message' => 'success',
-        ], 200);
+        try {
+            $code = random_int(1000, 9000);
+            dispatch(new SendSMS($request->phone_number, "Hi, Kindly use code: $code to complete your registration."));
+            return response()->json([
+                'code' => $code,
+                'message' => 'success',
+            ], 200);
+        } catch (Exception $e) {
+            return $this->response->error($e->getMessage());
+        }
+
     }
 }
