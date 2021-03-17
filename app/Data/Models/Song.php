@@ -34,7 +34,7 @@ class Song extends Model
     {
         $q->when(isset($filters['search']),function ($q) use ($filters){
            $q->where('title','like','%'.$filters['search'].'%')
-               ->orWhere('singer','like','%'.$filters['search'].'%')
+               ->orWhere('singer','like','%'.$filters['search'].'%');
         });
     }
 }
