@@ -32,6 +32,9 @@ class Song extends Model
 
     public function scopeFilterBy($q, $filters)
     {
-
+        $q->when(isset($filters['search']),function ($q) use ($filters){
+           $q->where('title','like','%'.$filters['search'].'%')
+               ->orWhere('singer','like','%'.$filters['search'].'%')
+        });
     }
 }
