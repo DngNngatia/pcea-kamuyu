@@ -53,7 +53,7 @@ class LoginController extends Controller
             $token = $request->user()->createToken($token_name)->accessToken;
             return response()->json(['token' => $token, 'user' => $request->user()], 200);
         } else {
-            return response()->json(['message' => 'Wrong email and password'], 401);
+            return response()->json(['message' => 'Wrong phone and password'], 401);
         }
     }
 
