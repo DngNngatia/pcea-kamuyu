@@ -19,10 +19,10 @@
         "laravel/nova": "*",
         "laravel/passport": "^7.0",
         "laravel/tinker": "^1.0",
+        "lcobucci/jwt": "3.3.3",
         "maatwebsite/excel": "^3.1",
         "predis/predis": "^1.1",
-        "waynestate/nova-ckeditor4-field": "^0.7.0",
-        "lcobucci/jwt": "3.3.3"
+        "waynestate/nova-ckeditor4-field": "^0.7.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
