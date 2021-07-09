@@ -14,7 +14,7 @@ class MakeDeviceTokenNullableToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('device_token')->nullable()->change();
+            DB::statement('ALTER TABLE users MODIFY device_token varchar(256) null');
         });
     }
 
@@ -26,7 +26,6 @@ class MakeDeviceTokenNullableToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('device_token')->change();
         });
     }
 }
