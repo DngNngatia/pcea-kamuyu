@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=1280">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>KAMUYU PCEA</title>
-    <link rel="icon" href="http://pceamuteero.com/wp-content/uploads/2018/09/testimonial_22-190x190.jpg">
+    <title>Metric</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,800,800i,900,900i" rel="stylesheet">
 
@@ -54,9 +53,9 @@
                     @yield('content')
 
                     <p class="mt-8 text-center text-xs text-80">
-                        <a href="http://nova.laravel.com" class="text-primary dim no-underline">Smart Churches</a>
+                        <a href="http://nova.laravel.com" class="text-primary dim no-underline">We value you</a>
                         <span class="px-1">&middot;</span>
-                        &copy; {{ date('Y') }} KAMUYU PCEA.
+                        &copy; {{ date('Y') }} Metric.
                         <span class="px-1">&middot;</span>
                         v{{ Laravel\Nova\Nova::version() }}
                     </p>

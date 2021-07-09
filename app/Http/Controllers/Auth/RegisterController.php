@@ -48,9 +48,7 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-        Log::info(json_encode($request->all()));
         $validator = Validator::make($request->all(), [
-            'device_token' => ['required', 'string'],
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'phone_number' => ['required', 'string', 'max:11', 'unique:users'],

@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ca9e2cd3-8bce-4d3b-9df9-1a2cdb3ba9d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nova/resources/views/auth/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/nova/resources/views/auth/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nova/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/nova/resources/views/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nova/resources/views/partials/logo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/nova/resources/views/partials/logo.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +182,6 @@
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -187,14 +189,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth" />
       <recent name="$PROJECT_DIR$/resources/views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -203,6 +206,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -279,11 +283,23 @@
       <workItem from="1616009893352" duration="1062000" />
       <workItem from="1616070160700" duration="354000" />
       <workItem from="1616138847780" duration="647000" />
+      <workItem from="1616312423733" duration="1285000" />
+      <workItem from="1617003602145" duration="785000" />
+      <workItem from="1619438281596" duration="998000" />
+      <workItem from="1619614836998" duration="708000" />
+      <workItem from="1621486736675" duration="1574000" />
+      <workItem from="1621492389261" duration="243000" />
+      <workItem from="1621493129478" duration="386000" />
+      <workItem from="1621493646009" duration="98000" />
+      <workItem from="1621496976970" duration="185000" />
+      <workItem from="1621668386044" duration="105000" />
+      <workItem from="1621881267041" duration="748000" />
+      <workItem from="1621951086542" duration="1488000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -300,13 +316,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1615804479812">
