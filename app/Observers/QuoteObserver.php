@@ -9,6 +9,7 @@ use App\User;
 use ExponentPhpSDK\Exceptions\ExpoException;
 use ExponentPhpSDK\Expo;
 use Illuminate\Support\Facades\Bus;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use mysql_xdevapi\Exception;
 
@@ -27,7 +28,11 @@ class QuoteObserver
                 $expo = Expo::normalSetup();
                 $expo->subscribe($user->id, $user->device_token);
                 $notification = ['body' => $quote->user->first_name.' uploaded a new quote','data' => 'Quotes', 'sound' => 'default',];
+            try {
                 $expo->notify((string)$user->id, $notification);
+            } catch (ExpoException $e) {
+                Log::info(json_encode($e->getMessage()));
+            }
         }
     }
 
