@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ca9e2cd3-8bce-4d3b-9df9-1a2cdb3ba9d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nova/resources/views/auth/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/nova/resources/views/auth/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nova/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/nova/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nova/resources/views/partials/logo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/nova/resources/views/partials/logo.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,6 +292,7 @@
       <workItem from="1621668386044" duration="105000" />
       <workItem from="1621881267041" duration="748000" />
       <workItem from="1621951086542" duration="1488000" />
+      <workItem from="1625825487917" duration="2143000" />
     </task>
     <servers />
   </component>

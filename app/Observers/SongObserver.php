@@ -17,19 +17,13 @@ class SongObserver
      */
     public function created(Song $song)
     {
-//        $users = User::get();
-//        foreach ($users as $user) {
-//            try{
-//                $expo = Expo::normalSetup();
-//                $notification = ['body' => $song->uploaded_by->first_name.' uploaded a new song', 'sound' => 'default'];
-//                $expo->notify((string)$user->id, $notification);
-//            }catch (Exception $e){
-//                $expo = Expo::normalSetup();
-//                $expo->subscribe($user->id, $user->device_token);
-//                $notification = ['body' => $song->uploaded_by->first_name.' uploaded a new song', 'sound' => 'default',];
-//                $expo->notify((string)$user->id, $notification);
-//            }
-//        }
+        $users = User::all();
+        foreach ($users as $user) {
+            $expo = Expo::normalSetup();
+            $expo->subscribe($user->id, $user->device_token);
+            $notification = ['body' => $song->user->first_name.' uploaded a song','data' => 'songs', 'sound' => 'default',];
+            $expo->notify((string)$user->id, $notification);
+        }
     }
 
     /**
