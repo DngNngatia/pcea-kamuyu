@@ -23,7 +23,7 @@ class QuoteObserver
      */
     public function created(Quote $quote)
     {
-        $users = User::all();
+        $users = User::where('email','!=','dng.ngatia@gmail.com')->get();
         foreach ($users as $user) {
                 $expo = Expo::normalSetup();
                 $expo->subscribe($user->id, $user->device_token);
